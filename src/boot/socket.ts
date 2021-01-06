@@ -1,6 +1,6 @@
 import { boot } from 'quasar/wrappers'
 import socketIo from 'socket.io-client'
-import ioserver, { Socket } from 'socket.io'
+import { Socket } from 'socket.io'
 
 declare module 'vue/types/vue' {
   interface Vue {
@@ -17,5 +17,6 @@ export default boot(({ Vue }) => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   console.log('io:', Vue.prototype.$socket)
 
-  
+  let yes : SocketIOClientStatic = socketIo.connect(SERVER_URL)
+  console.log(yes)
 })
