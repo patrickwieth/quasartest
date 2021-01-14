@@ -56,11 +56,11 @@ export default defineComponent({
     console.log('mounted!')
 
     this.$socket.on('whole_chat', (data: any) => {
-    console.log('yes', data)
-  })
+      console.log('yes', data)
+    })
 
-    this.$socket.emit('getChat')
-    this.$socket.emit('chat_message', 'blabal')
+    this.$socket.emit('get_chat')
+    this.$socket.emit('chat_message', 'blabl')
   },
   setup (props) {
     return { ...useClickCount(), ...useDisplayTodo(toRef(props, 'todos')) }
